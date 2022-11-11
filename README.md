@@ -37,13 +37,13 @@ Para el número de comuna hay datos que no son consistentes ('Sin Inf','In','SN'
 
 6. Se analizan los datos null. Se inspecciona que cantidad de datos se consideran perdidos y/o incompletos. Los resultados discretizados por mes y año se pueden observar en la figura 1:
 
-<img src="/Graficos/data_perdida.png" alt="data_perdida" title="Data perdida">
+<img src="/Graficas/data_perdida.png" alt="data_perdida" title="Data perdida">
 
 _figura 1: Data completa y data perdida. _
 
 7. Se elabora una gráfica para observar los meses con mayor accidentalidad (o con mayor cantidad de datos recogidos). Se observa en la figura 2 que agosto es el mes con mayor cantidad de accidentalidad. Y que en general, hay menos accidentes en la primera mitad del año que en el segundo semestre. 
 
-<img src="/Graficos/incidentalidad_mes.png" alt="accidentalidad_mes" title="accidentalidad mes">
+<img src="/Graficas/incidentalidad_mes.png" alt="accidentalidad_mes" title="accidentalidad mes">
 _figura 2: accidentalidad por mes. _
 
 8. Se eliminan los datos con data perdida dado que son menores en cantidad. 
@@ -70,7 +70,7 @@ _figura 2: accidentalidad por mes. _
    
 También se observó una caída en la accidentalidad en Medellín en 2020 debido a la pandemia del Covid-19. Esto se puede observar en la figura 3. 
    
-   <img src="/Graficos/frecuencias.png" alt="frecuencias" title="frecuencias">
+   <img src="/Graficas/frecuencias.png" alt="frecuencias" title="frecuencias">
 _figura 3: frecuencias. _
 
 10. Se separan las bases por tipo de accidente. 
