@@ -83,6 +83,11 @@ También se observó una caída en la accidentalidad en Medellín en 2020 debido
 
 Se observan grandes diferencias en un conjunto pequeño de datos (el que se ve de color verde, hacia la izquierda).
 
+15.
+
+<img src="/Graficas/elbow.png" alt="elbow" title="elbow">
+*figura 5: curva de elbow.*
+
 
 
 # Variables
