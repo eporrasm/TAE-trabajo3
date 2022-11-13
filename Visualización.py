@@ -146,18 +146,10 @@ with st.sidebar:
 
     ################# ENTRADAS DATOS A PRECEDIR ##############################
     st.markdown("# Visualizar accidentes")
-
-    fecha_inicio_hist = st.date_input(label="desde el", value=datetime.date(2014,12,14),min_value=datetime.date(2014,7,4), max_value=datetime.date(2020,8,31))
-    fecha_fin_hist = st.date_input(label = "hasta el", value=datetime.date(2019,12,14),min_value=fecha_inicio_hist, max_value=datetime.date(2020,8,31))
-    tipo_hist = st.selectbox("tipo de accidente: ", 
+    fechas = st.date_input("Ingrese rango de fechas", [datetime.date(2014,7,4), datetime.date(2020,8,31)], min_value=datetime.date(2014,7,4), max_value=datetime.date(2020,8,31))
+    tipo = st.selectbox("tipo de accidente: ", 
                         ("Atropello", "Caída de Ocupante", "Choque", "Incendio", "Volcamiento", "Otro"))
-    
-    st.markdown("# Predecir accidentes")
-    fecha_inicio_pred = st.date_input(label="desde el", value=datetime.date(2021,6,2),min_value=datetime.date(2021,1,1))
-    fecha_fin_pred = st.date_input(label = "hasta el", value=datetime.date(2022,3,12),min_value=fecha_inicio_pred)
-    tipo_pred = st.selectbox("tipo de accidente: ", 
-                        ("Atropello", "Caída de Ocupante", "Choque", "Incendio", "Volcamiento", "Otro"))
-
+    st.write(f"{fechas}")
 #     if dependencia == "Dependiente":
 
 #         dep_avg = st.slider(
