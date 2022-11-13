@@ -139,7 +139,7 @@ df1, df2, df3 = get_kmeans_model_separation()
 modeloImport = joblib.load("classifier.joblib")
 
 
-#st.map(df_data, zoom=3)
+
 ########### SIDEBAR ##########
 with st.sidebar:
 
