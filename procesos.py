@@ -1,16 +1,51 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import folium
 
-def load_data():
+@st.cache
+def load_df_clusters():
     
-    file = open("DataFramesYModelos/modelo_Choque_entrenado.pkl",'rb')
-    #data = pd.read_pickle('DataFramesYModelos/df_principal.pkl')
-    data = pickle.load(file)
+    #file = open("DataFramesYModelos/Clusters_Barrios.pkl",'rb')
+    data = pd.read_pickle('DataFramesYModelos/Clusters_Barrios.pkl')
+    #data = pickle.load(file)
+    puntos = data[['LONGITUD','LATITUD','BARRIO','cluster']]
 
-    return data
+    return puntos
 
-print(load_data())
+print(load_df_clusters())
+
+def create_map():
+    #TODO: Características de cada punto en el mapa
+    m = folium.Map(location=[20,0], tiles="OpenStreetMap", zoom_start=2)
+    folium.TileLayer('stamenterrain').add_to(m)
+
+    MapaFrame = load_df_clusters()
+
+    Cluser_0 = folium.FeatureGroup(name="Cluster 0").add_to(m)
+    Cluser_1 = folium.FeatureGroup(name="Cluster 1").add_to(m)
+    Cluser_2 = folium.FeatureGroup(name="Cluster 2").add_to(m)
+
+
+    folium.LayerControl().add_to(m)
+
+    for i in range(0,len(MapaFrame)):
+        if MapaFrame.iloc[i]['cluster'] == 0: 
+            color1 = "blue"
+            Cluser_0.add_child(folium.Marker(
+                location=[MapaFrame.iloc[i]['LATITUD'], MapaFrame.iloc[i]['LONGITUD']],
+                icon=folium.Icon(color=color1) , popup = MapaFrame.iloc[i]['BARRIO']))
+        elif MapaFrame.iloc[i]['cluster'] == 1:
+            color1 = "green"
+            Cluser_1.add_child(folium.Marker(
+                location=[MapaFrame.iloc[i]['LATITUD'], MapaFrame.iloc[i]['LONGITUD']],
+                icon=folium.Icon(color=color1) , popup = MapaFrame.iloc[i]['BARRIO']))
+        else:
+            color1 = "red"
+            Cluser_2.add_child(folium.Marker(
+                location=[MapaFrame.iloc[i]['LATITUD'], MapaFrame.iloc[i]['LONGITUD']],
+                icon=folium.Icon(color=color1) , popup = MapaFrame.iloc[i]['BARRIO']))
+    return m
 
 # def normalizar(columna, valor):
 #     return (valor - df_data[columna].min())/(df_data[columna].max() - df_data[columna].min())
