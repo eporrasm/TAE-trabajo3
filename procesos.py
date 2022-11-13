@@ -1,11 +1,16 @@
-# import streamlit as st
-# import joblib
+import streamlit as st
+import pickle
+import pandas as pd
 
-# def load_data():
+def load_data():
     
-#     data = joblib.load("DataPrincipal.pkl")
+    file = open("DataFramesYModelos/modelo_Choque_entrenado.pkl",'rb')
+    #data = pd.read_pickle('DataFramesYModelos/df_principal.pkl')
+    data = pickle.load(file)
 
-#     return data
+    return data
+
+print(load_data())
 
 # def normalizar(columna, valor):
 #     return (valor - df_data[columna].min())/(df_data[columna].max() - df_data[columna].min())
