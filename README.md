@@ -65,11 +65,13 @@ Para el número de comuna hay datos que no son consistentes ('Sin Inf','In','SN'
   |Con heridos| 136916 |
   |Solo daños| 111845 |
   |Con muertos| 322 |
-*tabla 2: gravedad del accidente*
+  
+  *tabla 2: gravedad del accidente*
    
 También se observó una caída en la accidentalidad en Medellín en 2020 debido a la pandemia del Covid-19. Esto se puede observar en la figura 3. 
    
    <img src="/Graficas/frecuencias.png" alt="frecuencias" title="frecuencias">
+   
 *figura 3: frecuencias*
 
 10. Se separan las bases por tipo de accidente. 
@@ -78,14 +80,16 @@ También se observó una caída en la accidentalidad en Medellín en 2020 debido
 13. Se normalizan los datos ordenados por barrio. Se utiliza el método MinMax. 
 14. Se realiza un dendograma, que se puede observar en la figura 4. 
   <img src="/Graficas/dendo.png" alt="dendograma" title="dendograma">
-*figura 4: dendograma.*
+  
+*figura 4: dendograma*
 
 Se observan grandes diferencias en un conjunto pequeño de datos (el que se ve de color verde, hacia la izquierda).
 
-15. Se realiza una gráfica de la curva Elbow para decidir el número n de clusters. Como se puede observar en la figura 6, por el cambio en la gráfica, se opta por utilizar 3 clusters. 
+15. Se realiza una gráfica de la curva Elbow para decidir el número n de clusters. Como se puede observar en la figura 5, por el cambio en la gráfica, se opta por utilizar 3 clusters. 
 
 <img src="/Graficas/elbow.png" alt="elbow" title="elbow">
-*figura 5: curva de elbow.*
+
+*figura 5: curva de elbow*
 
 ## Caracterización
 ### Cluster 0
@@ -116,7 +120,8 @@ Siendo así, cada uno de estos barrios se caracteriza por tener la mayor cantida
   |LATITUD | Latitud en grados del accidente |
   |MOMENTO | Momento del día según la hora del accidente |
   |SEMANA | Número de la semana en que ocurrió el accidente |
-  *tabla 3: Leyenda Mapa*
+  
+*tabla 3: Leyenda Mapa*
   
 
 # Mapa de Medellín
@@ -126,7 +131,8 @@ Siendo así, cada uno de estos barrios se caracteriza por tener la mayor cantida
   |Rojo | 2 | Alto riesgo de accidentes y peligro. Peligro alto | 
   |Morado | 1 | Peligro moderado. Peligro Medio |
   |Azul | 0 | Peligro bajo|
-  *tabla 4: Leyenda Mapa*
+  
+*tabla 4: Leyenda Mapa*
   
   #MAPA MEDELLIN POR FAVOR AAAAAAAAAAAAA
 
