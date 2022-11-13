@@ -134,7 +134,7 @@ Siendo así, cada uno de estos barrios se caracteriza por tener la mayor cantida
   
 *tabla 4: Leyenda Mapa*
   
-  #MAPA MEDELLIN POR FAVOR AAAAAAAAAAAAA
+<img src="/Graficas/mapa.html" alt="elbow" title="elbow">
 
 # Conclusiones
 * La mayoría de barrios peligrosos van ligados a la autopista Regional y a la autopista Norte y sus alrededores. Esto se debe a que son vías en las que se conduce a una mayor velocidad. Además, se observa que la mayoría de barrios que quedan en la zona de las autopistas en la comuna 10 - La Candelaria, representan un gran riesgo. En esta zona, se suma una mayor velocidad en las vías con una densidad poblacional muy alta, con cruce constante de personas. 
