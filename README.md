@@ -44,12 +44,13 @@ Para el número de comuna hay datos que no son consistentes ('Sin Inf','In','SN'
 7. Se elabora una gráfica para observar los meses con mayor accidentalidad (o con mayor cantidad de datos recogidos). Se observa en la figura 2 que agosto es el mes con mayor cantidad de accidentalidad. Y que en general, hay menos accidentes en la primera mitad del año que en el segundo semestre. 
 
 <img src="/Graficas/incidentalidad_mes.png" alt="accidentalidad_mes" title="accidentalidad mes">
-*figura 2: accidentalidad por mes.*
+*figura 2: accidentalidad por mes*
 
 8. Se eliminan los datos con data perdida dado que son menores en cantidad. 
 
 9. Se le hace un descriptivo a los datos. Se puede observar en la tabla 1 la cantidad por clase de accidente y en la segunda, la cantidad de accidentes según su gravedad. 
- | Clase de accidente | Cantidad |
+
+  | Clase de accidente | Cantidad |
   | --- | --- |
   |Choque| 168510 |
   |Otro| 26653 |
@@ -57,21 +58,19 @@ Para el número de comuna hay datos que no son consistentes ('Sin Inf','In','SN'
   |Caída de ocupante| 21453 |
   |Volcamiento| 9020 |
   |Incendio| 28 |
-  
-  *tabla 1: clase de accidente.*
+*tabla 1: clase de accidente*
 
-|Gravedad | Cantidad |
+  |Gravedad | Cantidad |
   | --- | --- |
   |Con heridos| 136916 |
   |Solo daños| 111845 |
   |Con muertos| 322 |
-   
-   *tabla 2: gravedad del accidente.*
+*tabla 2: gravedad del accidente*
    
 También se observó una caída en la accidentalidad en Medellín en 2020 debido a la pandemia del Covid-19. Esto se puede observar en la figura 3. 
    
    <img src="/Graficas/frecuencias.png" alt="frecuencias" title="frecuencias">
-*figura 3: frecuencias.*
+*figura 3: frecuencias*
 
 10. Se separan las bases por tipo de accidente. 
 11. Se hace el modelo para los choques. Se le hace el one hot enconding y pycaret.regression para hallar múltiples modelos utilizando diferentes métodos estocásticos de modelo. Nos quedamos con el modelo gbr ("Gradient boosting regressor"). Finalmente se calcula el error cuadrático medio RMSE. Se repite un modelo similar para los atropellos, donde se elige un modelo br ("Bayesian ridge"); caida, donde se usa un modelo ridge ("ridge regression"); volcamiento, donde se usa un modelo omp ("Orthogonal matchin pursuit"); otro, donde también se usa br; incendio, que no se le asigna ningún modelo.   
@@ -107,27 +106,27 @@ Siendo así, cada uno de estos barrios se caracteriza por tener la mayor cantida
  |Gravedad | Cantidad |
   | --- | --- |
   |AÑO | Año en que sucedió el accidente/incidente |
-  |CLASE_ACCIDENTE| Tipo de accidente |
-  |DISEÑO| Tipo de vía en la que sucedió |
-  |GRAVEDAD_ACCIDENTE| Expone si hubo heridos/muertos |
-  |MES| Número del 1 al 12 que indica el mes |
-    |NUMCOMUNA| Número de la comuna de Medellín |
-  |	BARRIO | Nombre del barrio de Medellín |
-   |LONGITUD| Longitud en grados del accidente |
-  |	LATITUD | Latitud en grados del accidente |
-  |	MOMENTO | Momento del día según la hora del accidente |
-   |	SEMANA | Número de la semana en que ocurrió el accidente |
-  *tabla 3: Leyenda Mapa.*
+  |CLASE_ACCIDENTE | Tipo de accidente |
+  |DISEÑO | Tipo de vía en la que sucedió |
+  |GRAVEDAD_ACCIDENTE | Expone si hubo heridos/muertos |
+  |MES | Número del 1 al 12 que indica el mes |
+  |NUMCOMUNA | Número de la comuna de Medellín |
+  |BARRIO | Nombre del barrio de Medellín |
+  |LONGITUD | Longitud en grados del accidente |
+  |LATITUD | Latitud en grados del accidente |
+  |MOMENTO | Momento del día según la hora del accidente |
+  |SEMANA | Número de la semana en que ocurrió el accidente |
+  *tabla 3: Leyenda Mapa*
   
 
 # Mapa de Medellín
 
   |Color | Cluster | Caracterización |
   | --- | --- | --- |
-  |Rojo| 2 |Alto riesgo de accidentes y peligro. Peligro alto | 
-  |Morado| 1 | Peligro moderado. Peligro Medio |
-  |Azul| 0 | Peligro bajo|
-  *tabla 4: Leyenda Mapa.*
+  |Rojo | 2 | Alto riesgo de accidentes y peligro. Peligro alto | 
+  |Morado | 1 | Peligro moderado. Peligro Medio |
+  |Azul | 0 | Peligro bajo|
+  *tabla 4: Leyenda Mapa*
   
   #MAPA MEDELLIN POR FAVOR AAAAAAAAAAAAA
 
