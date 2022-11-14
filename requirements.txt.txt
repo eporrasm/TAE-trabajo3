@@ -6,4 +6,4 @@ sklearn
 joblib
 datetime
 seaborn
-matplotlib.pyplot
+matplotlib
