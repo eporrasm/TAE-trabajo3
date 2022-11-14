@@ -13,7 +13,7 @@ def load_df_clusters():
 
     return puntos
 
-print(load_df_clusters())
+
 
 def create_map():
     #TODO: Características de cada punto en el mapa
@@ -47,6 +47,27 @@ def create_map():
                 icon=folium.Icon(color=color1) , popup = MapaFrame.iloc[i]['BARRIO']))
     return m
 
+
+def load_df_principal():
+    df = pd.read_pickle('DataFramesYModelos/df_principal.pkl')
+    df_puntos=df.copy()
+    df_puntos['BARRIO'] = df_puntos['BARRIO'].apply(lambda x : x.lower().replace("` ",""))
+    df_puntos=df_puntos[['BARRIO',"CLASE_ACCIDENTE", "GRAVEDAD_ACCIDENTE"]]
+    Barrios=df_puntos['BARRIO'].unique()
+    len(Barrios)
+    Puntos_estrategicos=pd.DataFrame()
+    for i in Barrios:
+        df_eliminados=df_puntos.loc[df_puntos["BARRIO"]==i]
+        df_eliminados=df_eliminados.reset_index()
+        Puntos_estrategicos=Puntos_estrategicos.append(df_eliminados)
+    Puntos_estrategicos=Puntos_estrategicos.sort_values('BARRIO')
+    Agrupado = Puntos_estrategicos.groupby(["BARRIO", "CLASE_ACCIDENTE"])["GRAVEDAD_ACCIDENTE"].agg(([lambda x : x.count()  ,lambda x: ((x.__eq__('Con heridos')).sum()) , lambda x: ((x.__eq__('Solo daños')).sum()) ,lambda x: ((x.__eq__('Con muertos')).sum())]))
+    Agrupado.sort_index(inplace=True)
+    #agrupado = df.groupby(["BARRIO", "CLASE_ACCIDENTE", "GRAVEDAD_ACCIDENTE"])["GRAVEDAD_ACCIDENTE"].count()
+    return Agrupado
+
+df = load_df_principal()
+print(df.columns)
 # def normalizar(columna, valor):
 #     return (valor - df_data[columna].min())/(df_data[columna].max() - df_data[columna].min())
 
