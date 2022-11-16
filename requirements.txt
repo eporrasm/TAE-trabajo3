@@ -2,7 +2,7 @@ streamlit
 numpy
 pandas
 pydeck
-sklearn
+scikit-learn
 pickle
 datetime
 seaborn
