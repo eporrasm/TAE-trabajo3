@@ -3,8 +3,6 @@ import streamlit as st
 st.set_page_config(page_title="Accidentes Med", page_icon="./Graficas/stockfish.png", layout="centered", initial_sidebar_state="auto")
 
 
-
-
 st.title("Accidentalidad pasada y futura en Medellín")
 
 st.markdown("¡Infórmate sobre la página! https://www.youtube.com/xxxx")
