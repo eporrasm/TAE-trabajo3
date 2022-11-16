@@ -120,7 +120,6 @@ def procesar_fechas(df_fechas):
     return df_fechas
 
 
-
 # df4 = df[['BARRIO','DIA_DEL_MES','MES','GRAVEDAD_ACCIDENTE']]
 # df4['BARRIO'] = df4['BARRIO'].apply(lambda x : x.lower().replace("` ",""))
 # df4 = df4.groupby(['BARRIO','MES','DIA_DEL_MES'])['GRAVEDAD_ACCIDENTE'].agg(([lambda x : x.count()  ,lambda x: ((x.__eq__('Con heridos')).sum()) , lambda x: ((x.__eq__('Solo daños')).sum()) ,lambda x: ((x.__eq__('Con muertos')).sum())]))
