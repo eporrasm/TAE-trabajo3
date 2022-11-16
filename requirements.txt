@@ -3,7 +3,6 @@ numpy
 pandas
 pydeck
 scikit-learn
-pickle
 datetime
 seaborn
 matplotlib

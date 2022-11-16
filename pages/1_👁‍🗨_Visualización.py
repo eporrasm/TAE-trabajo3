@@ -9,6 +9,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+st.set_page_config(page_title="Accidentes Med", page_icon="./Graficas/stockfish.png", layout="wide", initial_sidebar_state="auto")
+
 def load_data():
     data = pd.read_pickle('DataFramesYModelos/df_principal.pkl')
     return data
