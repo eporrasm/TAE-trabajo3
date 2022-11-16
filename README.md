@@ -1,4 +1,4 @@
-# Trabajo 2 de Técnicas en Aprendizaje Estadístico de la UNAL-med 
+# Trabajo 3 de Técnicas en Aprendizaje Estadístico de la UNAL-med 
 
 ## A cargo de:
 
@@ -8,7 +8,7 @@
 - José Luis Suárez Ledesma
 
 ## Introducción 
-En el presente informe se buscará tratar de predecir la accidentalidad en la ciudad de Medellín con base en la información de accidentes reportados a través de la plataforma MeData. Estos datos son abiertos al público. Se presentará la visualización en un mapa de accidentalidad por tipo de accidente.
+En el presente informe se buscará tratar de predecir la accidentalidad en la ciudad de Medellín con base en la información de accidentes reportados a través de la plataforma [MeData](http://medata.gov.co/dataset/incidentes-viales). Estos datos son abiertos al público. Se presentará la visualización en un mapa de accidentalidad por tipo de accidente.
 
 # Problemática
 Exponer bajo diferentes grados de accidentalidad el peligro en las vías en la ciudad de Medellín. Con base en esto se puede observar cuáles son las cualidades que se repiten en las calles más peligrosas de la ciudad. Así, se podría buscar mejorar la seguridad vial en Medellín, haciéndola una ciudad para todos. 
@@ -134,12 +134,17 @@ Siendo así, cada uno de estos barrios se caracteriza por tener la mayor cantida
   
 *tabla 4: Leyenda Mapa*
   
-<img src="/Graficas/mapa.html" alt="elbow" title="elbow">
+<img src="/Graficas/t3_mapa.JPG" alt="mapamedellin" title="mapamedellin">
+*figura 6: Mapa de Medellín*
 
 # Conclusiones
 * La mayoría de barrios peligrosos van ligados a la autopista Regional y a la autopista Norte y sus alrededores. Esto se debe a que son vías en las que se conduce a una mayor velocidad. Además, se observa que la mayoría de barrios que quedan en la zona de las autopistas en la comuna 10 - La Candelaria, representan un gran riesgo. En esta zona, se suma una mayor velocidad en las vías con una densidad poblacional muy alta, con cruce constante de personas. 
 * De manera similar, los barrios del cluster 1, es decir, los de intermedia incidentalidad, suelen estar cerca a vías de alta concurrencia diferentes a las autopistas, tales como San Juan, la calle 33 y la 30, la avenida el Poblado (la carrera 43a), entre otras. 
 * La mayoría de barrios de cuadras pequeñas pertenecen al cluster 0, teniendo la menor accidentalidad. Esto, en parte, se podría deber a que, al tener cuadras más pequeñas, los carros se ven obligados a conducir más lento, por lo que la mayoría de choques serían incidentes y no accidentes. Por otro lado, es claro que en una vía en la que transcurren muchos más carros, como la que lleva de un lado a otro de la ciudad, exista una mayor probabilidad de que haya un accidente. 
+# Aviso
+Los invitamos a entrar a nuestra página web a través del siguiente link:
+[Riesgo Medellín](https://eporrasm-tae-trabajo3--inicio-eqtq2o.streamlit.app/)
+y a visualizar nuestro video promocional : #####VIDEO PROMOCIONAL
 
 # Bibliografía
 * [1] "Hadoop Integration" (2021, Marzo 6). Incidentes viales  [Online]. Available: http://medata.gov.co/dataset/incidentes-viales
