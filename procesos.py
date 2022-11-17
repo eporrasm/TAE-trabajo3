@@ -15,22 +15,31 @@ def load_df_clusters():
 
     return puntos
 
-
+def load_data():
+    data = pd.read_pickle('DataFramesYModelos/df_principal.pkl')
+    return data
 
 def llenar_mapa(MapaFrame, Cluster_0, Cluster_1, Cluster_2):
     
     for i in range(0,len(MapaFrame)):
         html = f"""<b>Accidentes: </b> Cantidad <br> 
                     <br>
-                    <b>Atropello: </b> {MapaFrame.iloc[i]['Atropello_Accidentes']} <br>
-                    <b>Caída de ocupante: </b> {MapaFrame.iloc[i]['Caída de Ocupante_Accidentes']} <br>
-                    <b>Choque: </b> {MapaFrame.iloc[i]['Choque_Accidentes']} <br>
-                    <b>Volcamiento: </b> {MapaFrame.iloc[i]['Volcamiento_Accidentes']} <br>
-                    <b>Incendio: </b> {MapaFrame.iloc[i]['Incendio_Accidentes']} <br>
-                    <b>Otro: </b> {MapaFrame.iloc[i]['Otro_Accidentes']}"""
+                    <b>Atropellos: </b> {MapaFrame.iloc[i]['Atropello_Accidentes']} <br>
+                    <b>Caídas de ocupante: </b> {MapaFrame.iloc[i]['Caída de Ocupante_Accidentes']} <br>
+                    <b>Choques: </b> {MapaFrame.iloc[i]['Choque_Accidentes']} <br>
+                    <b>Volcamientos: </b> {MapaFrame.iloc[i]['Volcamiento_Accidentes']} <br>
+                    <b>Incendios: </b> {MapaFrame.iloc[i]['Incendio_Accidentes']} <br>
+                    <b>Otros: </b> {MapaFrame.iloc[i]['Otro_Accidentes']}<br>
+                    <b>Lugar más frecuente: </b> {MapaFrame.iloc[i]['DISEÑO']} <br>
+                    <b>Momento más frecuente: </b> {MapaFrame.iloc[i]['MOMENTO']} <br>
+                    <b>Gravedad más frecuente: </b> {MapaFrame.iloc[i]['GRAVEDAD_ACCIDENTE']} <br>
+                    <b>Media Accidentes: </b> {round(MapaFrame.iloc[i]['Accidentes'],2)} <br>
+                    <b>Media Heridos: </b> {round(MapaFrame.iloc[i]['Heridos'],2)} <br>
+                    <b>Media Daños: </b> {round(MapaFrame.iloc[i]['Daños'],2)} <br>
+                    <b>Media Muertos: </b> {round(MapaFrame.iloc[i]['Muertos'],2)}"""
         
         iframe = folium.IFrame(html)
-        popup = folium.Popup(iframe, min_width=270, max_width=300)
+        popup = folium.Popup(iframe, min_width=350, max_width=500)
         if MapaFrame.iloc[i]['cluster'] == 0: 
             color1 = "blue"
             Cluster_0.add_child(folium.Marker(
@@ -76,7 +85,7 @@ def create_map():
 @st.cache
 def load_df_agrupado_clusters():
 
-    file = open("DataFramesYModelos/Clusters_Datos_Agrupados.pkl", "rb")
+    file = open("DataFramesYModelos/Clusters_Datos_Agrupados_Definitivo.pkl", "rb")
     Agrupado = pickle.load(file)
     return Agrupado
 
@@ -120,13 +129,66 @@ def procesar_fechas(df_fechas):
     return df_fechas
 
 
-# df4 = df[['BARRIO','DIA_DEL_MES','MES','GRAVEDAD_ACCIDENTE']]
-# df4['BARRIO'] = df4['BARRIO'].apply(lambda x : x.lower().replace("` ",""))
-# df4 = df4.groupby(['BARRIO','MES','DIA_DEL_MES'])['GRAVEDAD_ACCIDENTE'].agg(([lambda x : x.count()  ,lambda x: ((x.__eq__('Con heridos')).sum()) , lambda x: ((x.__eq__('Solo daños')).sum()) ,lambda x: ((x.__eq__('Con muertos')).sum())]))
-# df4 = df4.groupby(['BARRIO']).mean()
-# df4.reset_index(inplace = True)
-# df4.rename({df4.columns[1] :'Accidentes', df4.columns[2] : 'Heridos', df4.columns[3]: 'Daños', df4.columns[4]: 'Muertos'}, axis = 1, inplace = True)
+# df = load_data()
+# df_clusters = df[['BARRIO','DIA_DEL_MES','MES','DISEÑO','MOMENTO','GRAVEDAD_ACCIDENTE']]
+# df_clusters['BARRIO'] = df_clusters['BARRIO'].apply(lambda x : x.lower().replace("` ",""))
+# df_clusters1 = df_clusters.groupby(['BARRIO','MES','DIA_DEL_MES'])["DISEÑO", "MOMENTO", 'GRAVEDAD_ACCIDENTE'].agg({"DISEÑO":lambda x: x.value_counts().index[0], "MOMENTO":lambda x: x.value_counts().index[0], "GRAVEDAD_ACCIDENTE":lambda x: x.value_counts().index[0]})
+# df_clusters1 = df_clusters1.groupby('BARRIO').agg({"DISEÑO":lambda x: x.value_counts().index[0], "MOMENTO":lambda x: x.value_counts().index[0], "GRAVEDAD_ACCIDENTE":lambda x: x.value_counts().index[0]}).reset_index()
 
+
+
+# # df2 = load_df_clusters()
+# # print(df2)
+# df_clusters_viejo = load_df_clusters()
+# df_clusters1["cluster"] = df_clusters_viejo["cluster"]
+# print("-----------------------------------------------------------------------")
+# print(df_clusters1)
+
+
+# df_clusters2 = df[['BARRIO','DIA_DEL_MES','MES','GRAVEDAD_ACCIDENTE']]
+# df_clusters2["BARRIO"] = df_clusters2['BARRIO'].apply(lambda x : x.lower().replace("` ",""))
+# df_clusters2 = df_clusters2.groupby(['BARRIO','MES','DIA_DEL_MES'])['GRAVEDAD_ACCIDENTE'].agg(([lambda x : x.count()  ,lambda x: ((x.__eq__('Con heridos')).sum()) , lambda x: ((x.__eq__('Solo daños')).sum()) ,lambda x: ((x.__eq__('Con muertos')).sum())]))
+# df_clusters2 = df_clusters2.groupby(['BARRIO']).mean()
+# df_clusters2.reset_index(inplace = True)
+# df_clusters2.rename({df_clusters2.columns[1] :'Accidentes', df_clusters2.columns[2] : 'Heridos', df_clusters2.columns[3]: 'Daños', df_clusters2.columns[4]: 'Muertos'}, axis = 1, inplace = True)
+# #print(df_clusters2)
+
+# df3 = load_df_agrupado_clusters()
+# #print(df3)
+
+# newdf = pd.merge(df3, df_clusters1.drop(columns=["cluster"]), how="left", on="BARRIO")
+# print("-----------------------------------------------------------------------")
+# print(newdf)
+# #print(df_clusters2)
+
+
+# #print(df_clusters_viejo)
+
+# df_clusters2["cluster"] = df_clusters_viejo["cluster"]
+# #print(df_clusters2)
+
+# newnewdf = df_clusters2.groupby("cluster", as_index=False).mean()
+# print("-----------------------------------------------------------------------")
+# newdf = newdf.merge(newnewdf, how="left", on="cluster")
+# print(newdf)
+
+file = open("DataFramesYModelos/Clusters_Datos_Agrupados_Definitivo.pkl", "rb")
+Agrupado = pickle.load(file)
+
+print(Agrupado)
+
+
+
+
+#df_clusters_viejo = df_clusters_viejo.merge(df_clusters2, on="BARRIO", how="left")
+#df_clusters_viejo = df_clusters_viejo.groupby("cluster", as_index=False).mean()
+#df_clusters_viejo = df_clusters_viejo[["cluster","Accidentes", "Heridos", "Daños", "Muertos"]]
+#print(df_clusters_viejo)
+
+
+
+#df_con_means = df_clusters2.merge(df_clusters_viejo, on="cluster", how="left")
+#print(df_con_means)
 
 # file = open("DataFramesYModelos/Clusters_Datos_Agrupados.pkl", "rb")
 # xd = pickle.load(file)
