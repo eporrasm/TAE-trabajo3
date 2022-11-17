@@ -6,3 +6,4 @@ scikit-learn
 datetime
 seaborn
 matplotlib
+streamlit_folium
