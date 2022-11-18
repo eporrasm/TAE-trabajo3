@@ -22,8 +22,9 @@ try:
     df_fechas = pd.DataFrame(columns=["FECHA"])
     f1,f2 = fechas
     while f1 <= f2:
-        df_fechas.append(pd.DataFrame({"Fecha": [f1]}))
-        f1 += datetime.timedelta(days=1)
+        df_fechas = df_fechas.append(pd.DataFrame({"FECHA": [f1]}))
+        f1 += datetime.timedelta(days=1)   
+    df_fechas=df_fechas.reset_index(drop=True) 
     st.write(df_fechas)
 
 except:
