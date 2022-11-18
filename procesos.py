@@ -71,9 +71,9 @@ def create_map():
 
     
 
-    Cluster_0 = folium.FeatureGroup(name="Cluster 0").add_to(m)
-    Cluster_1 = folium.FeatureGroup(name="Cluster 1").add_to(m)
-    Cluster_2 = folium.FeatureGroup(name="Cluster 2").add_to(m)
+    Cluster_0 = folium.FeatureGroup(name="Accidentalidad Baja").add_to(m)
+    Cluster_1 = folium.FeatureGroup(name="Accidentalidad Media").add_to(m)
+    Cluster_2 = folium.FeatureGroup(name="Accidentalidad Alta").add_to(m)
 
 
     folium.LayerControl().add_to(m)
@@ -112,13 +112,18 @@ def quincena(f):
             z.append(0)
     return z
 
-@st.cache
-def festivos():
-    return pd.read_excel("Festivos.xlsx")
 
+def festivos():
+    data = pd.read_excel("Festivos.xlsx")
+    return data
+
+def date_a_datetime(date):
+    datetimef = datetime.datetime(year = date.year, month=date.month, day=date.day)
+    return datetimef
 
 def procesar_fechas(df_fechas):
     df_festivos = festivos()
+    df_fechas["FECHA"] = df_fechas["FECHA"].apply(date_a_datetime)
     df_fechas['festivo'] = df_fechas['FECHA'].apply(lambda x: 1 if x in df_festivos['Fecha'].unique() else 0)
     df_fechas['Year'] = df_fechas['FECHA'].dt.year
     df_fechas['Month'] = df_fechas['FECHA'].dt.month
@@ -126,6 +131,7 @@ def procesar_fechas(df_fechas):
     df_fechas['Dayw'] = df_fechas['FECHA'].apply(lambda x: x.strftime('%A'))
     df_fechas['Quincena'] = quincena(df_fechas)
     df_fechas.drop(["FECHA"], axis=1, inplace=True)
+    df_fechas = pd.get_dummies(df_fechas)
     return df_fechas
 
 

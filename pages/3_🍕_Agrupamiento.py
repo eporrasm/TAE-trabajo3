@@ -7,11 +7,17 @@ st.set_page_config(page_title="Agrupamiento Med", page_icon="./Graficas/stockfis
 
 st.title("Agrupamiento de barrios")
 
-#Mapa = create_map()
+st.markdown("Aquí se muestran los barrios agrupados en cluster. Se agruparon en 3 clusters.")
+st.markdown("El cluster en rojo es el que presenta más accidentalidad, y el azul es el que menos.")
+st.markdown('### Nota:')
+st.markdown('Los datos que aparece como "Media" son datos del cluster al que pertenece el barrio. Todos los otros datos pertenecen a cada barrio individual.')
+st.markdown("Se pueden utilizar las opciones de la derecha arriba en el mapa para visualizar sólo los clusters deseados.")
 
-#Mapa.save("Graficas/MapaFinal.html")
+# Mapa = create_map()
 
-#m_data = st_folium(Mapa, width = 1200)
+# Mapa.save("Graficas/MapaFinal.html")
+
+# m_data = st_folium(Mapa, width = 1200)
 
 HtmlFile = open("Graficas/MapaFinal.html", 'r', encoding='utf-8')
 source_code = HtmlFile.read() 
