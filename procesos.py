@@ -172,10 +172,10 @@ def procesar_fechas(df_fechas):
 # newdf = newdf.merge(newnewdf, how="left", on="cluster")
 # print(newdf)
 
-file = open("DataFramesYModelos/Clusters_Datos_Agrupados_Definitivo.pkl", "rb")
-Agrupado = pickle.load(file)
+#file = open("DataFramesYModelos/Clusters_Datos_Agrupados_Definitivo.pkl", "rb")
+#Agrupado = pickle.load(file)
 
-print(Agrupado)
+#print(Agrupado)
 
 
 

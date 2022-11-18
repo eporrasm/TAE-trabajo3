@@ -17,3 +17,14 @@ with st.sidebar:
  #Hay que hacer un dataframe de una sola columna que se llama "FECHA" donde cada fila
  #es una fecha en el rango que dio el usuario. Después hay que aplicar procesar_fechas a
 #este dataframe y ya queda con el formato para aplicar el modelo.
+
+try:
+    df_fechas = pd.DataFrame(columns=["FECHA"])
+    f1,f2 = fechas
+    while f1 <= f2:
+        df_fechas.append(pd.DataFrame({"Fecha": [f1]}))
+        f1 += datetime.timedelta(days=1)
+    st.write(df_fechas)
+
+except:
+    st.markdown("# Esperando rango de fechas...")

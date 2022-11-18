@@ -58,7 +58,6 @@ try:
     with col2:
         st.subheader("En cuanto a la gravedad de los accidentes, se tiene: ")
         st.subheader(" ")
-        st.subheader(" ")
         fig2, ax2 = plt.subplots()
         ax2.hist(df_filtrado["GRAVEDAD_ACCIDENTE"], bins=11, ec="black")
         ax2.set_title("Gravedad de los accidentes")
