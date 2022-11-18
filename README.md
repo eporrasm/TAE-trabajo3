@@ -44,6 +44,7 @@ Para el número de comuna hay datos que no son consistentes ('Sin Inf','In','SN'
 7. Se elabora una gráfica para observar los meses con mayor accidentalidad (o con mayor cantidad de datos recogidos). Se observa en la figura 2 que agosto es el mes con mayor cantidad de accidentalidad. Y que en general, hay menos accidentes en la primera mitad del año que en el segundo semestre. 
 
 <img src="/Graficas/incidentalidad_mes.png" alt="accidentalidad_mes" title="accidentalidad mes">
+
 *figura 2: accidentalidad por mes*
 
 8. Se eliminan los datos con data perdida dado que son menores en cantidad. 
@@ -134,7 +135,8 @@ Siendo así, cada uno de estos barrios se caracteriza por tener la mayor cantida
   
 *tabla 4: Leyenda Mapa*
   
-<img src="/Graficas/t3_mapa.JPG" alt="mapamedellin" title="mapamedellin">
+<img src="/Graficas/mapa1.JPG" alt="mapamedellin" title="mapamedellin">
+
 *figura 6: Mapa de Medellín*
 
 # Conclusiones
@@ -145,10 +147,15 @@ Siendo así, cada uno de estos barrios se caracteriza por tener la mayor cantida
 Los invitamos a entrar a nuestra página web a través del siguiente link:
 [Riesgo Medellín](https://eporrasm-tae-trabajo3--inicio-eqtq2o.streamlit.app/)
 y a visualizar nuestro video promocional : #####VIDEO PROMOCIONAL
-![](/Graficas/mapa.html)
+![Video]()
 
 # Bibliografía
 * [1] "Hadoop Integration" (2021, Marzo 6). Incidentes viales  [Online]. Available: http://medata.gov.co/dataset/incidentes-viales
 * [2] "MEData" (SF). El portal de datos de Medellín  [Online]. Available: http://medata.gov.co/
 * [3] "MinTIC" (SF). Ministerio de tecnologías de la información y las comunicaciones [Online]. Available:https://www.mintic.gov.co/portal/inicio/
 * [4] "Secretaría de movilidad" (SF). Secretaría de movilidad de Medellín [Online]. Available: https://www.medellin.gov.co/movilidad/
+# Lecturas recomendadas
+* "Universidad de Antioquia" (SF). Mala educación, principal causa de inseguridad vial en Medellín [Online]. Available: [UDEA](https://www.udea.edu.co/wps/portal/udea/web/inicio/udea-noticias/udea-noticia/!ut/p/z0/fYyxDoJAEER_xYbS7Ip4akksTIyFhTFwjdlwF1yFW-AO4ucLWhgbm8m8ycyAhgy0o4FLCiyOqpFzra6b7S5epAkeUSUKU3VKVut4vzxfEA6g_xfGB763rU5BF-KCfQbIGukCVb2xFCH5X7pJbT9-0pmTwAWTj_C9dmxkan1jLwVbQyZCdt6WfccjzGsZuJocNA-dvwBb8aDu/)
+* "Secretaría de Movilidad de Medellín" (SF). ¿Qué es Visión Cero? [Online]. Available: https://www.visionceromedellin.co/?playlist=cba060b&video=828a030
+* "Concejo de Medellín" (SF). LA ALTA ACCIDENTALIDAD EN MEDELLÍN SE CONVIRTIÓ EN UN PROBLEMA DE SALUD PÚBLICA [Online]. Available: https://www.concejodemedellin.gov.co/es/node/1024?language_content_entity=es
+* "Medellín Cómo vamos" (SF). Medellín: número de muertes en accidentes de tránsito y tasa por 100.000 habitantes, 2014-2019 [Online]. Available: https://www.medellincomovamos.org/node/23554
