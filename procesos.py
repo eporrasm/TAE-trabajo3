@@ -4,6 +4,7 @@ import pandas as pd
 import folium
 import numpy as np
 import datetime
+import random
 
 @st.cache
 def load_df_clusters():
@@ -101,7 +102,7 @@ def load_models():
     choque =  pickle.load(choque)
     otro =  pickle.load(otro)
     volcamiento =  pickle.load(volcamiento)
-    return (atropello, caida, choque, otro, volcamiento)
+    return atropello, caida, choque, otro, volcamiento
 
 def quincena(f):
     z = []
@@ -135,6 +136,15 @@ def procesar_fechas(df_fechas):
     return df_fechas
 
 
+# data = load_data()
+# print(len(data[data["CLASE_ACCIDENTE"] == "Atropello"]), len(data[data["CLASE_ACCIDENTE"]== "Otro"]))
+
+def piso_techo(num):
+    coso = random.random()
+    if coso < 0.5:
+        return int(num)
+    else:
+        return int(num)+1
 # df = load_data()
 # df_clusters = df[['BARRIO','DIA_DEL_MES','MES','DISEÑO','MOMENTO','GRAVEDAD_ACCIDENTE']]
 # df_clusters['BARRIO'] = df_clusters['BARRIO'].apply(lambda x : x.lower().replace("` ",""))
