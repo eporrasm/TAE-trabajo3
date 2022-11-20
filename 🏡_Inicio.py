@@ -5,8 +5,6 @@ st.set_page_config(page_title="Accidentes Med", page_icon="./Graficas/stockfish.
 
 st.title("Accidentalidad pasada y futura en Medellín")
 
-st.markdown("¡Infórmate sobre la página! https://www.youtube.com/xxxx")
-
 st.markdown("""¡Bienvenido! Esta aplicación le ayudará a conocer datos útiles sobre accidentes
 pasados y futuros en la ciudad de medellín. La página está dirigida especialmente a personas
 que trabajen en prevensión de riesgos que puedan utilizar dichos datos para evitar futuros accidentes, 
