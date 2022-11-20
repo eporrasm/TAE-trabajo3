@@ -3,9 +3,9 @@ import streamlit as st
 st.set_page_config(page_title="Accidentes Med", page_icon="./Graficas/stockfish.png", layout="wide", initial_sidebar_state="auto")
 
 
-st.title("Accidentalidad pasada y futura en Medellín")
+st.title("Accidentalidad pasada y futura en Medellín")"""
 
-st.markdown("¡Infórmate sobre la página! https://www.youtube.com/xxxx")
+"""st.markdown("¡Infórmate sobre la página! https://www.youtube.com/xxxx")
 
 st.markdown("""¡Bienvenido! Esta aplicación le ayudará a conocer datos útiles sobre accidentes
 pasados y futuros en la ciudad de medellín. La página está dirigida especialmente a personas
