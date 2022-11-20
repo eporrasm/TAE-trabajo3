@@ -23,8 +23,7 @@ def load_data():
 def llenar_mapa(MapaFrame, Cluster_0, Cluster_1, Cluster_2):
     
     for i in range(0,len(MapaFrame)):
-        html = f"""<b>Accidentes: </b> Cantidad <br> 
-                    <br>
+        html = f""" <br>
                     <b>Atropellos: </b> {MapaFrame.iloc[i]['Atropello_Accidentes']} <br>
                     <b>Caídas de ocupante: </b> {MapaFrame.iloc[i]['Caída de Ocupante_Accidentes']} <br>
                     <b>Choques: </b> {MapaFrame.iloc[i]['Choque_Accidentes']} <br>
