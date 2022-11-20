@@ -8,5 +8,4 @@ seaborn
 matplotlib
 streamlit_folium
 numpy
-random
 openpyxl
