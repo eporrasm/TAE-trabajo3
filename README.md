@@ -146,8 +146,7 @@ Siendo así, cada uno de estos barrios se caracteriza por tener la mayor cantida
 # Aviso
 Los invitamos a entrar a nuestra página web a través del siguiente link:
 [Riesgo Medellín](https://eporrasm-tae-trabajo3--inicio-eqtq2o.streamlit.app/)
-y a visualizar nuestro video promocional : #####VIDEO PROMOCIONAL
-![Video]()
+y a visualizar nuestro video promocional : [Video](https://youtu.be/XEmvBpwb6LI)
 
 # Bibliografía
 * [1] "Hadoop Integration" (2021, Marzo 6). Incidentes viales  [Online]. Available: http://medata.gov.co/dataset/incidentes-viales
