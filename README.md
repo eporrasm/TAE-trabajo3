@@ -100,7 +100,7 @@ _figura 5: curva de elbow_
 
 ### Enfoque
 
-El enfoque a predecir fue la accidentalidad, la cuál se trabajó como la cantidad de accidentes de una clase de accidente en específico que puede ocurrir en una ventana determinada de tiempo. Es decir, se predice el número de accidentes de la clase seleccionada para una ventana de tiempo.
+La predicción se hizo con base en la accidentalidad, la cuál se trabajó como la cantidad de accidentes de una clase de accidente en específico que puede ocurrir en una ventana determinada de tiempo. Es decir, se predice el número de accidentes de la clase seleccionada para una ventana de tiempo.
 
 ### Código
 
@@ -120,7 +120,7 @@ Cada modelo fue evaluado con la métria MAE (Mean Absolute Error), y se consigui
 | Otro        | 3.77      | 4.52     | 6.38     |
 | Choque      | 8.00      | 10.35    | 34.35    |
 
-_tabla 3: Leyenda Mapa_
+_tabla 3: MAE modelos de predicción_
 
 En general cada modelo dio muy buenos resultados, en especial porque son números los que predice, y varían drásticamente en ciertos casos.
 
